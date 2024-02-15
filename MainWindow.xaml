@@ -1,0 +1,25 @@
+﻿<Window x:Class="DesktopCleaner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopCleaner"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="325" Width="800">
+    <Grid>
+        <CheckBox Content="Obrázky" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top" Checked="PictureSelection" Unchecked="PictureSelection"/>
+        <CheckBox Content="Archívy" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top" Checked="ArchiveSelection" Unchecked="ArchiveSelection"/>
+        <CheckBox Content="Dokumenty" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" Checked="DocumentSelection" Unchecked="DocumentSelection"/>
+        <CheckBox Content="Videa" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top" Checked="VideoSelection" Unchecked="VideoSelection"/>
+        <CheckBox Content="Torrenty" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top" Checked="TorrentSelection" Unchecked="TorrentSelection"/>
+        <CheckBox Content="Executable" HorizontalAlignment="Left" Margin="225,50,0,0" VerticalAlignment="Top" Checked="ExecutableSelection" Unchecked="ExecutableSelection"/>
+        <CheckBox Content="Cinema Efekty" HorizontalAlignment="Left" Margin="225,100,0,0" VerticalAlignment="Top" Checked="CinemaEffectSelection" Unchecked="CinemaEffectSelection"/>
+        <CheckBox Content="Hudba" HorizontalAlignment="Left" Margin="225,150,0,0" VerticalAlignment="Top" Checked="MusicSelection" Unchecked="MusicSelection"/>
+        <CheckBox Content="Zástupce" HorizontalAlignment="Left" Margin="225,200,0,0" VerticalAlignment="Top" Checked="ShortcutSelection" Unchecked="ShortcutSelection"/>
+        <CheckBox Content="3D Tisk" HorizontalAlignment="Left" Margin="225,250,0,0" VerticalAlignment="Top" Checked="Printer" Unchecked="Printer"/>
+        <Button Content="Uklidit" HorizontalAlignment="Left" Margin="488,108,0,0" VerticalAlignment="Top" Height="100" Width="200" Click="Clean"/>
+        <Label Content="Vyber si které přípony souborů chceš uklidit" HorizontalAlignment="Left" Margin="463,39,0,0" VerticalAlignment="Top" Height="26" Width="250"/>
+        <Label Name="VelkeText" Content="" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Height="34" Width="618" FontSize="15" Foreground="Red"/>
+
+    </Grid>
+</Window>
