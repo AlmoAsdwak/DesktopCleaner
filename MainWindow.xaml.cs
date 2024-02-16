@@ -114,14 +114,14 @@ namespace DesktopCleaner
                         var tmp = file;
                         string[] filesindestination = Directory.GetFiles(categoryPath);
                         foreach (var filez in filesindestination)
-                            if (file.Substring(file.LastIndexOf('\\')) == filez.Substring(file.LastIndexOf('\\')))
+                            if (file.Substring(file.LastIndexOf('\\')) == filez.Substring(filez.LastIndexOf('\\')))
                             {
                                 tmp = Check(file, filesindestination,0);
                             }
                         string fileName = Path.GetFileName(tmp);
                         string destination = Path.Combine(categoryPath, fileName);
 
-                        File.Move(tmp, destination);
+                        File.Move(file, destination);
                     }
                 }
             }
@@ -154,8 +154,8 @@ namespace DesktopCleaner
         private string Check(string a, string[] b, int tries)
         {
             string tmp = a;
-            a += tries.ToString();
-            foreach(var file in b)
+            a = a.Insert(a.LastIndexOf('\\')+1, tries.ToString());
+            foreach (var file in b)
                 if (a.Substring(a.LastIndexOf('\\')) == file.Substring(file.LastIndexOf('\\')))
                     a = Check(tmp, b, tries + 1);
             return a;
