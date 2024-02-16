@@ -13,7 +13,7 @@ namespace DesktopCleaner
         public string[] executable = { "*.exe" };
         public string[] cinemaeffect = { "*.c4d" };
         public string[] musics = { "*.mp3", "*.wav", "*.flac", "*.midi" };
-        public string[] shortcuts = { "*.lnk" };
+        public string[] shortcuts = { "*.Ink" };
         public string[] printing = { "*.stl", "*.gcode", "*.obj", "*.3ds", "*.blend", "*.skp", "*.max", "*.3dmf", "*.3mf" };
         public bool pictureselection = false;
         public bool archiveselection = false;

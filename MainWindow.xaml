@@ -41,7 +41,7 @@
             <!-- Měním barvu textu na světlejší odstín, aby byl lépe viditelný na tmavém pozadí -->
             <Label Name="VelkeText" Content="" FontSize="18" Margin="0 0 0 20" Foreground="#EEEEEE"/>
             <TextBox Name="TextBoxs" Height="37" TextWrapping="Wrap" Text="" Margin="0 0 0 10" Foreground="#EEEEEE" Background="#555555"/>
-            <TextBlock Text="Vlož vlastní přípony ve formátu: *.jar,*.zip,*.rar, nezapomeň na čárku vždy za každou příponou" TextWrapping="Wrap" Margin="0 0 0 20" Foreground="#333333" FontWeight="Bold"/>
+            <TextBlock Text="Vlož vlastní přípony ve formátu: *.jar,*.zip,*.rar, nezapomeň na čárku vždy za každou příponou, nezapomeň že je vše case-sensitive" TextWrapping="Wrap" Margin="0 0 0 20" Foreground="#333333" FontWeight="Bold"/>
             <Button Content="Uklidit" Height="50" Width="200" Click="Clean" HorizontalAlignment="Right" Foreground="#EEEEEE" Background="#333333"/>
         </StackPanel>
     </Grid>
