@@ -7,7 +7,7 @@ namespace DesktopCleaner
     public partial class MainWindow : Window
     {
         public string[] pictures = { "*.jpg", "*.jpeg", "*.gif", "*.psd", "*.tiff", "*.tif", "*.png", "*.bmp", "*.raw", "*.nef", "*.ai" };
-        public string[] archives = { "*.zip", "*.rar", "*.7z", "*.iso", "*.s7z", "*.apk", "*.cab", "*.pak", "*.zipx" };
+        public string[] archives = { "*.zip", "*.rar", "*.7z", "*.iso", "*.s7z", "*.apk", "*.cab", "*.pak", "*.zipx","*.jar" };
         public string[] documents = { "*.doc", "*.docx", "*.pdf", "*.txt", "*.rtf", "*.xlsx", "*.csv" };
         public string[] videos = { "*.mov", "*.mp4", "*.avi", "*.mkv", "*.flv", "*.m2t", "*.mpeg", "*.wmv" };
         public string[] torrents = { "*.torrent" };
@@ -118,6 +118,31 @@ namespace DesktopCleaner
                         string destination = Path.Combine(categoryPath, fileName);
                         File.Move(file, destination);
                     }
+                }
+            }
+            if(TextBoxs.Text != null)
+            {
+                string extensionPath = Path.Combine(RootPath, "Ostatni");
+                Directory.CreateDirectory(extensionPath);
+                string text = TextBoxs.Text;
+                int lastindex = 0;
+                while (true)
+                {
+                    if (!text.Contains(','))
+                        return;
+                    int tmp = text.IndexOf(',');
+                    string extension = text.Substring(0, tmp);
+                    text = text.Remove(lastindex,text.Length);
+                    lastindex = tmp;
+                    string[] files = Directory.GetFiles(desktopPath, extension);
+                    foreach (var file in files)
+                    {
+                        string fileName = Path.GetFileName(file);
+                        string destination = Path.Combine(extensionPath, fileName);
+                        File.Move(file, destination);
+                    }
+                    if (!text.Contains(","))
+                        break;
                 }
             }
         }

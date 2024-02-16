@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopCleaner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="335" Width="800">
+        Title="MainWindow" Height="350" Width="800">
     <Grid>
         <CheckBox Content="Obrázky" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
         <CheckBox Content="Archívy" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
@@ -19,6 +19,9 @@
         <CheckBox Content="3D Tisk" HorizontalAlignment="Left" Margin="225,250,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
         <Button Content="Uklidit" HorizontalAlignment="Left" Margin="488,108,0,0" VerticalAlignment="Top" Height="100" Width="200" Click="Clean"/>
         <Label Content="Vyber si které přípony souborů chceš uklidit" HorizontalAlignment="Left" Margin="463,39,0,0" VerticalAlignment="Top" Height="26" Width="250"/>
-        <Label Name="VelkeText" Content="" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Height="34" Width="618" FontSize="15" Foreground="Red"/>
+        <Label Name="VelkeText" Content="" HorizontalAlignment="Center" Margin="0,276,0,0" VerticalAlignment="Top" Height="34" Width="618" FontSize="15" Foreground="Red"/>
+        <TextBox Name="TextBoxs"  HorizontalAlignment="Left" Height="37" Margin="480,239,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <TextBlock HorizontalAlignment="Left" Margin="462,208,0,0" TextWrapping="Wrap" Text="Vlož vlastní přípony ve formátu: *.jar,*.zip,*.rar, nezapomeň na čárku vždy za každou příponou" VerticalAlignment="Top" Height="45" Width="252"/>
+
     </Grid>
 </Window>
