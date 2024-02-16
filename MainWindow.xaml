@@ -5,20 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopCleaner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="335" Width="800">
+        Title="Desktop Cleaner" Height="450" Width="800">
     <Grid>
-        <CheckBox Content="Obrázky" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
-        <CheckBox Content="Archívy" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
-        <CheckBox Content="Dokumenty" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
-        <CheckBox Content="Videa" HorizontalAlignment="Left" Margin="100,200,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
-        <CheckBox Content="Torrenty" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
-        <CheckBox Content="Executable" HorizontalAlignment="Left" Margin="225,50,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
-        <CheckBox Content="Cinema Efekty" HorizontalAlignment="Left" Margin="225,100,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
-        <CheckBox Content="Hudba" HorizontalAlignment="Left" Margin="225,150,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
-        <CheckBox Content="Zástupce" HorizontalAlignment="Left" Margin="225,200,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
-        <CheckBox Content="3D Tisk" HorizontalAlignment="Left" Margin="225,250,0,0" VerticalAlignment="Top" Checked="SelectionChanged" Unchecked="SelectionChanged"/>
-        <Button Content="Uklidit" HorizontalAlignment="Left" Margin="488,108,0,0" VerticalAlignment="Top" Height="100" Width="200" Click="Clean"/>
-        <Label Content="Vyber si které přípony souborů chceš uklidit" HorizontalAlignment="Left" Margin="463,39,0,0" VerticalAlignment="Top" Height="26" Width="250"/>
-        <Label Name="VelkeText" Content="" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Height="34" Width="618" FontSize="15" Foreground="Red"/>
+        <!-- Přidávám fotku do pozadí pomocí BackgroundImage -->
+        <Grid.Background>
+            <ImageBrush ImageSource="moutain.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="20">
+            <!-- Měním barvu textu na tmavší odstín, aby byl lépe viditelný na světlém pozadí -->
+            <!-- Měním barvu textu na tmavší odstín, aby byl lépe viditelný na světlém pozadí -->
+            <!-- Měním barvu textu na tmavší odstín, aby byl lépe viditelný na světlém pozadí -->
+            <!-- Měním barvu textu na tmavší odstín, aby byl lépe viditelný na světlém pozadí -->
+            <!-- Měním barvu textu na tmavší odstín, aby byl lépe viditelný na světlém pozadí -->
+            <!-- Měním barvu textu na tmavší odstín, aby byl lépe viditelný na světlém pozadí -->
+            <!-- Měním barvu textu na tmavší odstín, aby byl lépe viditelný na světlém pozadí -->
+            <Label Content="Vyber si které přípony souborů" FontSize="16" Foreground="#333333" Width="260"/>
+            <CheckBox Content="Obrázky" Margin="0 0 10 0" Checked="SelectionChanged" Unchecked="SelectionChanged" Foreground="#333333"/>
+            <CheckBox Content="Archívy" Margin="0 0 10 0" Checked="SelectionChanged" Unchecked="SelectionChanged" Foreground="#333333"/>
+            <CheckBox Content="Dokumenty" Margin="0 0 10 0" Checked="SelectionChanged" Unchecked="SelectionChanged" Foreground="#333333"/>
+            <CheckBox Content="Videa" Margin="0 0 10 0" Checked="SelectionChanged" Unchecked="SelectionChanged" Foreground="#333333"/>
+            <CheckBox Content="Torrenty" Margin="0 0 10 0" Checked="SelectionChanged" Unchecked="SelectionChanged" Foreground="#333333"/>
+            <CheckBox Content="Executable" Margin="0 0 10 0" Checked="SelectionChanged" Unchecked="SelectionChanged" Foreground="#333333"/>
+            <CheckBox Content="Cinema Efekty" Margin="0 0 10 0" Checked="SelectionChanged" Unchecked="SelectionChanged" Foreground="#333333"/>
+            <CheckBox Content="Hudba" Margin="0 0 10 0" Checked="SelectionChanged" Unchecked="SelectionChanged" Foreground="#333333"/>
+            <CheckBox Content="Zástupce" Margin="0 0 10 0" Checked="SelectionChanged" Unchecked="SelectionChanged" Foreground="#333333"/>
+            <CheckBox Content="3D Tisk" Margin="0 0 10 0" Checked="SelectionChanged" Unchecked="SelectionChanged" Foreground="#333333"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="20">
+            <!-- Měním barvu textu na světlejší odstín, aby byl lépe viditelný na tmavém pozadí -->
+            <Label Name="VelkeText" Content="" FontSize="18" Margin="0 0 0 20" Foreground="#EEEEEE"/>
+            <TextBox Name="TextBoxs" Height="37" TextWrapping="Wrap" Text="" Margin="0 0 0 10" Foreground="#EEEEEE" Background="#555555"/>
+            <TextBlock Text="Vlož vlastní přípony ve formátu: *.jar,*.zip,*.rar, nezapomeň na čárku vždy za každou příponou" TextWrapping="Wrap" Margin="0 0 0 20" Foreground="#333333" FontWeight="Bold"/>
+            <Button Content="Uklidit" Height="50" Width="200" Click="Clean" HorizontalAlignment="Right" Foreground="#EEEEEE" Background="#333333"/>
+        </StackPanel>
     </Grid>
 </Window>
