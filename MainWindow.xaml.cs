@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-
 namespace DesktopCleaner
 {
     public partial class MainWindow : Window
@@ -79,13 +78,10 @@ namespace DesktopCleaner
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string RootPath = Path.Combine(desktopPath, @"DesktopCleaner\");
 
-            if (Directory.Exists(RootPath))
-            {
-                VelkeText.Content = "Na ploše již existuje složka DesktopCleaner, prosím přejmenujte nebo přestuňte tuto složku";
-                return;
-            }
+            if (!Directory.Exists(RootPath))
+                Directory.CreateDirectory(RootPath);
 
-            Directory.CreateDirectory(RootPath);
+            
 
             Dictionary<string, (bool selection, string[] items)> categories = new Dictionary<string, (bool, string[])>()
             {
@@ -107,19 +103,37 @@ namespace DesktopCleaner
                     continue;
 
                 string categoryPath = Path.Combine(RootPath, category.Key);
-                Directory.CreateDirectory(categoryPath);
+                if(!Directory.Exists(categoryPath))
+                    Directory.CreateDirectory(categoryPath);
 
                 foreach (var item in category.Value.items)
                 {
                     string[] files = Directory.GetFiles(desktopPath, item);
                     foreach (var file in files)
                     {
-                        string fileName = Path.GetFileName(file);
+                        var tmp = file;
+                        string[] filesindestination = Directory.GetFiles(categoryPath);
+                        foreach (var filez in filesindestination)
+                            if (file.Substring(file.LastIndexOf('\\')) == filez.Substring(file.LastIndexOf('\\')))
+                            {
+                                tmp = Check(file, filesindestination,0);
+                            }
+                        string fileName = Path.GetFileName(tmp);
                         string destination = Path.Combine(categoryPath, fileName);
-                        File.Move(file, destination);
+
+                        File.Move(tmp, destination);
                     }
                 }
             }
+        }
+        private string Check(string a, string[] b, int tries)
+        {
+            string tmp = a;
+            a += tries.ToString();
+            foreach(var file in b)
+                if (a.Substring(a.LastIndexOf('\\')) == file.Substring(file.LastIndexOf('\\')))
+                    a = Check(tmp, b, tries + 1);
+            return a;
         }
     }
 }
