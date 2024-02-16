@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="moutain.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="moutain.jpg" />
+  </ItemGroup>
+
 </Project>
